@@ -3,13 +3,14 @@ FROM lsiobase/ubuntu:xenial
 # set version label
 ARG BUILD_DATE
 ARG VERSION
+ARG TS3_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV TS3SERVER_LICENSE="accept"
-
+ENV TS3_VERSION=${TS3_VERSION}
 RUN \
  echo "**** install packages ****" && \
  apt-get update && \
