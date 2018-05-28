@@ -359,7 +359,7 @@ pipeline {
     stage("Set ENV custom_json"){
       when {
         expression {
-          env.EXT_RELEASE_TYPE = 'custom_json'
+          env.EXT_RELEASE_TYPE == 'custom_json'
         }
       }
       steps{
